@@ -12,6 +12,12 @@ example response:
 }
 ```
 
+Files explanation:
+app.py - file used for routes
+Smartcar.py - file for Smartcar API, functions to use GM API and get info
+test.py - file with unit tests
+
 ## Test Cases
 I wrote unit tests in test.py. These tests validate things like error codes, correct input/output, data types, etc.
+I mainly tested to see if the routes returned expected values, whether they be errors or actual data.
 One thing I didn't get a chance to do but should have is validating format for parameters, e.g. making sure ID is int.
