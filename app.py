@@ -12,8 +12,7 @@ def get_vehicle_info(id):
     try:
       res = Smartcar.get_vehicle_info(id)
       return jsonify(res)
-    except ValueError as e:
-      print(e, "EEEEEEE")
+    except ValueError as e:      
       if str(e) == '404':
         abort(404, 'Vehicle info not found')
       else:
@@ -28,12 +27,11 @@ def get_door_status(id):
     try:
       res = Smartcar.get_door_info(id)
       return jsonify(res)
-    except ValueError as e:
-      print(e, "EEEEEEE")
+    except ValueError as e:      
       if str(e) == '404':
         abort(404, 'Vehicle info not found')
       else:
-        abort(400, e.message)
+        abort(400, e)
   else:
     abort(405, 'Wrong method')
 		
@@ -45,11 +43,10 @@ def get_fuel_range(id):
       res = Smartcar.get_fuel_range(id)
       return jsonify(res)
     except ValueError as e:
-      print(e, "EEEEEEE")
       if str(e) == '404':
         abort(404, 'Vehicle info not found')
       else:
-        abort(400, e.message)
+        abort(400, e)
   else:
     abort(405, 'Wrong method')
 
@@ -61,11 +58,10 @@ def get_battery_range(id):
       res = Smartcar.get_battery_range(id)
       return jsonify(res)
     except ValueError as e:
-      print(e, "EEEEEEE")
       if str(e) == '404':
         abort(404, 'Vehicle info not found')
       else:
-        abort(400, e.message)
+        abort(400, e)
   else:
     abort(405, 'Wrong method')
     
